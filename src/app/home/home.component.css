@@ -1,0 +1,20 @@
+
+.img{
+	height: 200px
+}
+.article-img{
+	height: 150px
+}
+.subtext4{
+	font-size: 12px;
+}
+.title h2 a {
+    color: #164c9a;
+    font-size: 20px;
+    font-family: trebuchet MS;
+    text-decoration: none;
+    margin-top: 0px;
+}
+.title h2{
+	margin-top: 0px;
+}

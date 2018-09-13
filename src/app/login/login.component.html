@@ -1,0 +1,23 @@
+<br>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <div fxFlex="32%" fxLayout="column">
+    <img class="register-img" src="https://www.inspectionsupport.net/wp-content/uploads/2014/07/LoginRed.jpg">
+  </div>
+  <div fxFlex="32%" fxLayout="column">
+    <mat-card class="login-form">
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput formControlName="username" placeholder="Username" autocomplete="off" required>
+            <mat-error *ngIf="!loginForm.get('username').hasError('required') && loginForm.get('username').hasError('minlength')">The username field must be at least 6 characters in length.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="password" placeholder="Password" [type]="hidePassword ? 'password' : 'text'" required>
+            <mat-icon style="cursor: pointer;" matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </mat-form-field>
+          <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
